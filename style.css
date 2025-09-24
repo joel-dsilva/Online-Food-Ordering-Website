@@ -1,0 +1,422 @@
+/* Custom Styles */
+:root {
+    --primary-color: #dc3545;
+    --secondary-color: #ff6b7a;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 76px;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* Navigation */
+.navbar {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    color: white !important;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.cart-icon .badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('food_banner.jpeg') center/cover no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: -76px;
+}
+
+.hero-overlay {
+    width: 100%;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.hero-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    z-index: -1;
+}
+
+/* Restaurant Cards */
+.restaurant-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.restaurant-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.restaurant-name {
+    font-size: 1.8rem;
+    color: var(--dark-color);
+    margin: 0;
+}
+
+.rating-badge {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* FIXED Menu Items Layout - No more squishing! */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.menu-item {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    height: auto; /* Let content determine height */
+    min-height: 480px; /* Minimum height to prevent squishing */
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(220, 53, 69, 0.2);
+}
+
+/* Fixed image proportions */
+.food-img {
+    height: 220px; /* Fixed height for consistency */
+    width: 100%;
+    object-fit: cover; /* Ensure images fill space properly */
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.card-body {
+    padding: 1.5rem;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow body to grow and fill space */
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+    min-height: auto; /* Remove fixed height */
+}
+
+.card-text {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    flex-grow: 1; /* Allow description to take available space */
+    min-height: auto; /* Remove fixed height */
+}
+
+.price-cart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Push to bottom of card */
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.add-to-cart {
+    border-radius: 25px;
+    padding: 0.6rem 1.5rem;
+    transition: all 0.3s ease;
+    border: none;
+    font-weight: 600;
+    white-space: nowrap; /* Prevent button text wrapping */
+}
+
+.add-to-cart:hover {
+    transform: scale(1.05);
+    background: var(--secondary-color);
+}
+
+/* Features Section */
+.features-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.feature-item {
+    padding: 2rem;
+    text-align: center;
+}
+
+.feature-item i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ffd700;
+}
+
+.feature-item h4 {
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.feature-item p {
+    color: rgba(255,255,255,0.9);
+}
+
+/* Search Section */
+.search-section {
+    background: white;
+    border-bottom: 3px solid var(--primary-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    position: relative;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* Cart Modal */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-title {
+    color: white;
+    font-weight: bold;
+}
+
+.cart-item {
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item h6 {
+    color: #333;
+    margin-bottom: 0.2rem;
+}
+
+.cart-total {
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.cart-total h4 {
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .restaurant-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .restaurant-name {
+        font-size: 1.5rem;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .menu-item {
+        min-height: 450px; /* Slightly smaller on mobile */
+    }
+    
+    .rating-badge {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-section {
+        height: 300px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .menu-item {
+        min-height: 420px; /* Even smaller on very small screens */
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .price-cart-container {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+    
+    .add-to-cart {
+        width: 100%;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.menu-item {
+    animation: fadeIn 0.6s ease;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    z-index: 1050;
+    animation: slideIn 0.3s ease;
+    border-radius: 10px;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+/* Ensure all text is visible */
+.container, .card, .modal-body {
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+}
+
+p, span, div {
+    color: #333;
+}
+
+/* Fallback for missing banner image */
+.hero-section.no-banner {
+    background: linear-gradient(135deg, #dc3545, #ff6b7a);
+}
+
+.hero-section.no-banner .hero-overlay {
+    background: none;
+}
